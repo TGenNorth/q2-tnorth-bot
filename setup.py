@@ -33,4 +33,5 @@ setup(
         "q2_tnorth_bot.tests": ["data/*"],
     },
     zip_safe=False,
+    scripts=['scripts/auto-qc']
 )
