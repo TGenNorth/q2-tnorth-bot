@@ -18,7 +18,8 @@ plugin = Plugin(
     version=__version__,
     website="https://github.com/TGenNorth",
     package="q2_tnorth_bot",
-    description="A plugin to facilitate automated initial processing of TGen North sequencing data.",
+    description=("A plugin to facilitate automated initial processing of TGen "
+                 "North sequencing data."),
     short_description="TGen North bot.",
     # Please retain the plugin-level citation of 'Caporaso-Bolyen-2024'
     # as attribution of the use of this template, in addition to any citations
