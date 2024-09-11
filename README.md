@@ -4,9 +4,8 @@ A [QIIME 2](https://qiime2.org) plugin [developed](https://develop.qiime2.org) b
 
 ## Installation instructions
 
-**The following instructions are intended to be a starting point** and should be replaced when `q2-tnorth-bot` is ready to share with others.
-They will enable you to install the most recent *development* version of `q2-tnorth-bot`.
-Remember that *release* versions should be used for all "real" work (i.e., where you're not testing or prototyping) - if there aren't instructions for installing a release version of this plugin, it is probably not yet intended for use in practice.
+`q2-tnorth-bot` is a tool for testing and developing an automated quality control workflow for sequencing data generated at TGen North.
+It is developed as a QIIME 2 plugin for the convenience of adding QIIME 2 actions in the future, but at present it is not intended to be used as a QIIME 2 plugin and just provides some scripts that can be used to facilitate analysis.
 
 ### Install Prerequisites
 
@@ -49,37 +48,19 @@ Finally, run:
 make install
 ```
 
-## Testing and using the most recent development version of `q2-tnorth-bot`
+## Usage
 
-After completing the install steps above, confirm that everything is working as expected by running:
-
-```shell
-make test
-```
-
-You should get a report that tests were run, and you should see that all tests passed and none failed.
-It's usually ok if some warnings are reported.
-
-If all of the tests pass, you're ready to use the plugin.
-Start by making QIIME 2's command line interface aware of `q2-tnorth-bot` by running:
+As of this writing (11 Sept 2024), the only functionality provided through this plugin is the `auto-qc` command.
+After installation and activation of the conda environment as described above, you should be able to provide a QIIME 2 Fastq Manifest file to automatically create a QIIME 2 "demux artifact" (`demux.qza`) and a QIIME 2 "demux summary" (`demux.qzv`).
+Both will be created in the user-specified output directory.
+This command can be used as follows:
 
 ```shell
-qiime dev refresh-cache
+auto-qc <path-to-fq-manifest> <output-directory>
 ```
 
-You should then see the plugin in the list of available plugins if you run:
+Where `path-to-fq-manifest` is the path to the fastq manifest file, and `output-directory` is the directory where the output files should be written.
 
-```shell
-qiime info
-```
-
-You should be able to review the help text by running:
-
-```shell
-qiime tnorth-bot --help
-```
-
-Have fun! 😎
 
 ## About
 
